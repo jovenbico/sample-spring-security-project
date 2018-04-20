@@ -2,3 +2,7 @@
 http://localhost:8000/oauth/authorize?client_id=my_foo&response_type=token&redirect_uri=http://localhost:8000/me
 
 http://localhost:8000/oauth/authorize?client_id=my_bar&response_type=token&redirect_uri=http://localhost:8000/bar/me
+
+http://login-foo.example.com/oauth/authorize?client_id=my_foo&response_type=token&redirect_uri=http://login-foo.example.com/me
+
+http://login-bar.example.com/oauth/authorize?client_id=my_bar&response_type=token&redirect_uri=http://login-bar.example.com/me
