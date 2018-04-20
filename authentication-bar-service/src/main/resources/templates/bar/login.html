@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BAR LOGIN</title>
+</head>
+<body>
+        <h3>BAR Login with Username and Password</h3>
+        <form name='f' action='/bar/login' method='POST'>
+        	<input type="hidden" name="clientId" value="my_bar" >
+            <table>
+                <tr>
+                    <td>User:</td>
+                    <td>
+                        <input type='text' name='username' value='bar'>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td>
+                        <input type='password' name='password' value='pass'/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='2'>
+                        <input name="submit" type="submit" value="Login"/>
+                    </td>
+                </tr>
+            </table>
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FOO LOGIN</title>
+</head>
+<body>
+        <h3>FOO Login with Username and Password</h3>
+        <form name='f' action='/login' method='POST'>
+            <table>
+            	<tr>
+                    <td>Cient:</td>
+                    <td>
+                        <input type='text' name='clientId' value=''>
+                    </td>
+                </tr>
+                <tr>
+                    <td>User:</td>
+                    <td>
+                        <input type='text' name='username' value='foo'>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td>
+                        <input type='password' name='password' value='pass'/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='2'>
+                        <input name="submit" type="submit" value="Login"/>
+                    </td>
+                </tr>
+            </table>
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        </form>
+</body>
+</html>
