@@ -2,6 +2,7 @@ package com.bicjo.sample.bar.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -18,6 +19,7 @@ import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.stereotype.Component;
 
 @Configuration
+@ConditionalOnProperty(prefix = "example.bar.authentication", name = "enabled", havingValue = "true", matchIfMissing = false)
 public class BarAuthenticationConfig {
 
 	@Bean
@@ -28,6 +30,7 @@ public class BarAuthenticationConfig {
 	}
 
 	@Component("barAuthenticationProvider")
+	@ConditionalOnProperty(prefix = "example.bar.authentication", name = "enabled", havingValue = "true", matchIfMissing = false)
 	public static class BarAuthenticationProvider implements AuthenticationProvider {
 
 		@Autowired
