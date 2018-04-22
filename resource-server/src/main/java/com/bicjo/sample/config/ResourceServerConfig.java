@@ -22,7 +22,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	@Override
 	public void configure(ResourceServerSecurityConfigurer config) {
 		config.tokenServices(tokenServices())//
-				.resourceId("oauth2/foo");
+				.resourceId("oauth2/resource");
 	}
 
 	@Bean

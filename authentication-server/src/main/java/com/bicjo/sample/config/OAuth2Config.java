@@ -43,14 +43,14 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 				.authorizedGrantTypes("implicit")//
 				.scopes("read", "write")//
 				.redirectUris("http://localhost:8000/me", "http://login-foo.example.com/me")//
-				.resourceIds("oauth2/foo")//
+				.resourceIds("oauth2/resource")//
 				.autoApprove(true)//
 				.and()//
 				.withClient("my_bar")//
 				.authorizedGrantTypes("implicit")//
 				.scopes("read", "write")//
 				.redirectUris("http://localhost:8000/bar/me", "http://login-bar.example.com/me")//
-				.resourceIds("oauth2/bar")//
+				.resourceIds("oauth2/resource")//
 				.autoApprove(true)//
 		;
 	}
