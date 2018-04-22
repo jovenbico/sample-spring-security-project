@@ -1,0 +1,10 @@
+---
+server:
+  port: ${port:8001}
+spring.security:
+  user:
+    password: passwrd
+logging:
+  level:
+    com.bicjo.sample: DEBUG
+#    org.springframework.security: DEBUG
