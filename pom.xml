@@ -7,7 +7,7 @@
 	<packaging>pom</packaging>
 	
 	<modules>
-		<module>authentication-server</module>
 		<module>authentication-bar-service</module>
+		<module>authentication-server</module>
 	</modules>
 </project>
