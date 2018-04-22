@@ -10,3 +10,45 @@ http://login-foo.example.com/oauth/authorize?client_id=my_foo&response_type=toke
 http://login-bar.example.com/oauth/authorize?client_id=my_bar&response_type=token&redirect_uri=http://login-bar.example.com/me
 
 http://api-foo.example.com/resource/me?access_token=
+
+---
+
+server {
+    listen 80;
+    server_name login-foo.example.com;
+
+    location / {
+        proxy_pass http://localhost:8000/;
+    }
+}
+
+server {
+    listen 80;
+    server_name login-bar.example.com;
+
+    location /login {
+        proxy_pass http://localhost:8000/bar/login;
+    }
+
+    location / {
+        proxy_pass http://localhost:8000/;
+    }
+}
+
+server {
+    listen 80;
+    server_name api-dev.example.com;
+
+    location / {
+        proxy_pass http://localhost:8001/;
+    }
+}
+
+
+
+http://login-foo.example.com/oauth/authorize?client_id=my_foo&response_type=token&scope=read write&redirect_uri=http://login-foo.example.com/me
+
+http://login-bar.example.com/oauth/authorize?client_id=my_bar&response_type=token&scope=read%20write&redirect_uri=http://login-bar.example.com/me
+
+
+http://api-dev.example.com/resource/me?access_token=
